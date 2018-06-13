@@ -129,6 +129,20 @@ options:
   find_existing_by: ['title', 'user_id']
 ```
 
+#### skip_existing:
+Do not update existing records (must be used with find_existing_by
+
+This can be useful for data you want to pre-seed in the environment and then allow to be edited in your system afterward.
+
+Example:
+
+```yaml
+# posts.yml
+
+options:
+  skip_existing: true
+```
+
 ### Computed Values
 
 It's common to want seed values that are dynamic.  Sprig supports an ERB style syntax for computing seed attributes.
