@@ -27,7 +27,8 @@ module Sprig
       end
 
       def save_record
-        return if record.existing? && options[:skip_existing] # Do not update record
+        return true if record.existing? && options[:skip_existing] # Do not update record
+        record.save
       end
 
       def save_to_store
